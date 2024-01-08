@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "betterf1",
+  "version": "${version}",
+  "name": "BetterF1",
+  "description": "Hide parts of your HUD using F1.",
+  "authors": [
+    "UltimateBoomer",
+    "MovTery"
+  ],
+  "contact": {
+    "repo": ""
+  },
+  "license": "MIT",
+  "icon": "assets/betterf1/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.movtery.betterf1.client.BetterF1Client"
+    ]
+  },
+  "mixins": [
+    "betterf1.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": ">=1.17 <=1.20.4"
+  }
+}
