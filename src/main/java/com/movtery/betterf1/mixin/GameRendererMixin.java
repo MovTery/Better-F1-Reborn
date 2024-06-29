@@ -2,6 +2,7 @@ package com.movtery.betterf1.mixin;
 
 import com.movtery.betterf1.BetterF1;
 import com.movtery.betterf1.client.HUDState;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
 import org.spongepowered.asm.mixin.Final;
@@ -19,7 +20,7 @@ public class GameRendererMixin {
 
     // Doing it this way is for Optifine compatibility
     @Inject(method = "renderLevel", at = @At("HEAD"))
-    private void onRenderHand1(float pPartialTick, long pNanoTime, CallbackInfo ci) {
+    private void onRenderHand1(DeltaTracker p_348589_, CallbackInfo ci) {
         if (BetterF1.state.equals(HUDState.NO_HUD)) {
             minecraft.options.hideGui = false;
         }
