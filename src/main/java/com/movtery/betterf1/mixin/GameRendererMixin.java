@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class GameRendererMixin {
 
     @Shadow @Final
-    Minecraft minecraft;
+    private Minecraft minecraft;
 
     // Doing it this way is for Optifine compatibility
     @Inject(method = "renderLevel", at = @At("HEAD"))

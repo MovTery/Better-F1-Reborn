@@ -24,6 +24,5 @@ public class KeyboardMixin {
         // Seems most safe
         minecraft.options.hideGui = !BetterF1.state.equals(HUDState.ALL_VISIBLE);
         ci.cancel();
-        BetterF1.LOGGER.debug("F1 state changed to: {}", BetterF1.state);
     }
 }
