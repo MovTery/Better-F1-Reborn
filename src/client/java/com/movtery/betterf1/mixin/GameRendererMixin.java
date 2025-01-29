@@ -1,6 +1,6 @@
 package com.movtery.betterf1.mixin;
 
-import com.movtery.betterf1.client.BetterF1Client;
+import com.movtery.betterf1.client.BetterF1;
 import com.movtery.betterf1.client.HUDState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.GameRenderer;
@@ -16,19 +16,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class GameRendererMixin {
     @Shadow
     @Final
-    MinecraftClient client;
+    private MinecraftClient client;
 
     // Doing it this way is for Optifine compatibility
     @Inject(method = "renderWorld", at = @At("HEAD"))
     private void onRenderHand1(RenderTickCounter tickCounter, CallbackInfo ci) {
-        if (BetterF1Client.state.equals(HUDState.NO_HUD)) {
+        if (BetterF1.state.equals(HUDState.NO_HUD)) {
             client.options.hudHidden = false;
         }
     }
 
     @Inject(method = "renderWorld", at = @At("TAIL"))
     private void onRenderHand2(CallbackInfo ci) {
-        if (BetterF1Client.state.equals(HUDState.NO_HUD)) {
+        if (BetterF1.state.equals(HUDState.NO_HUD)) {
             client.options.hudHidden = true;
         }
     }
