@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "com.movtery.betterf1.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+        "GameRendererMixin",
+        "KeyboardHandlerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,24 +1,24 @@
 {
-  "schemaVersion": 1,
-  "id": "betterf1",
-  "version": "${version}",
-  "name": "BetterF1",
-  "description": "Hide parts of your HUD using F1.",
-  "authors": [
-    "UltimateBoomer",
-    "MovTery"
-  ],
-  "license": "MIT",
-  "icon": "assets/betterf1/icon.png",
-  "environment": "client",
-  "mixins": [
-    {
-      "config": "betterf1.client.mixins.json",
-      "environment": "client"
-    }
-  ],
-  "depends": {
-    "fabricloader": ">=0.7.4",
-    "minecraft": ">=1.21.9"
-  }
+	"schemaVersion": 1,
+	"id": "better-f1-reborn",
+	"version": "${version}",
+	"name": "BetterF1",
+	"description": "Hide parts of your HUD using F1.",
+	"authors": [
+      "UltimateBoomer",
+      "MovTery"
+	],
+	"license": "MIT",
+    "icon": "assets/betterf1/icon.png",
+	"environment": "client",
+    "mixins": [
+      {
+        "config": "betterf1.client.mixins.json",
+        "environment": "client"
+      }
+    ],
+	"depends": {
+        "fabricloader": ">=0.17.2",
+		"minecraft": "~26.1-"
+	}
 }
