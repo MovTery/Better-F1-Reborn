@@ -7,7 +7,7 @@
   ],
   "client": [
     "GameRendererMixin",
-    "KeyboardMixin"
+    "HudMixin"
   ],
   "injectors": {
     "defaultRequire": 1
