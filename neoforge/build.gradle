@@ -59,3 +59,32 @@ sourceSets.configureEach {
         }
     }
 }
+
+repositories {
+    maven {
+        name = "CaffeineMC"
+        url = "https://maven.caffeinemc.net/releases"
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        // forRepositories(fg.repository) // Uncomment when using ForgeGradle
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+}
+
+dependencies {
+    var sodiumNeo = "net.caffeinemc:sodium-neoforge-mod:0.8.9+mc26.1.1"
+    var irisNeo = "maven.modrinth:YL57xq9U:YEGDGnJM"
+    compileOnly(sodiumNeo)
+    compileOnly(irisNeo)
+
+    runtimeOnly(sodiumNeo)
+    runtimeOnly(irisNeo)
+}

@@ -12,11 +12,38 @@ neoForge {
     }
 }
 
+repositories {
+    maven {
+        name = "CaffeineMC"
+        url = "https://maven.caffeinemc.net/releases"
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        // forRepositories(fg.repository) // Uncomment when using ForgeGradle
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+}
+
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     // fabric and neoforge both bundle mixinextras, so it is safe to use it in common
     compileOnly group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.3.5'
     annotationProcessor group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.3.5'
+
+    var sodiumNeo = "net.caffeinemc:sodium-neoforge-mod:0.8.9+mc26.1.1"
+    var irisNeo = "maven.modrinth:YL57xq9U:YEGDGnJM"
+    compileOnly(sodiumNeo)
+    compileOnly(irisNeo)
+
+    runtimeOnly(sodiumNeo)
+    runtimeOnly(irisNeo)
 }
 
 configurations {
