@@ -25,8 +25,8 @@ dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     implementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
 
-    implementation "net.caffeinemc:sodium-fabric:0.8.9+mc26.1.1"
-    implementation "maven.modrinth:YL57xq9U:MwcLS51S"
+    implementation "net.caffeinemc:sodium-fabric:0.9.1+mc26.2"
+    implementation "maven.modrinth:YL57xq9U:oaD6KQls"
 }
 
 loom {

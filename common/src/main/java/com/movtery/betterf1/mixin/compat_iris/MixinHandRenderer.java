@@ -3,7 +3,7 @@ package com.movtery.betterf1.mixin.compat_iris;
 import com.movtery.betterf1.BetterF1;
 import com.movtery.betterf1.client.HUDState;
 import net.irisshaders.iris.pathways.HandRenderer;
-import net.minecraft.client.Options;
+import net.minecraft.client.gui.Hud;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,12 +16,11 @@ public class MixinHandRenderer {
     @Redirect(
             method = "canRender",
             at = @At(
-                    value = "FIELD",
-                    target = "Lnet/minecraft/client/Options;hideGui:Z"
-            ),
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/gui/Hud;isHidden()Z"),
             remap = false
     )
-    private boolean canRender(Options instance) {
-        return instance.hideGui && BetterF1.state.equals(HUDState.ALL_HIDDEN);
+    private boolean canRender(Hud instance) {
+        return instance.isHidden() && BetterF1.state.equals(HUDState.ALL_HIDDEN);
     }
 }

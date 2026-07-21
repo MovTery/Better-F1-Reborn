@@ -80,8 +80,8 @@ repositories {
 }
 
 dependencies {
-    var sodiumNeo = "net.caffeinemc:sodium-neoforge-mod:0.8.9+mc26.1.1"
-    var irisNeo = "maven.modrinth:YL57xq9U:YEGDGnJM"
+    var sodiumNeo = "net.caffeinemc:sodium-neoforge-mod:0.9.1+mc26.2"
+    var irisNeo = "maven.modrinth:YL57xq9U:bXt6zsZT"
     compileOnly(sodiumNeo)
     compileOnly(irisNeo)
 
